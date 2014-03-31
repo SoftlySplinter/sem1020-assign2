@@ -331,7 +331,7 @@
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
 % Do not put math or special symbols in the title.
-\title{Something to do with Image Processing}
+\title{Digital Analysis of Paintings}
 
 
 % author names and affiliations
@@ -384,7 +384,7 @@ Email: adb9@aber.ac.uk}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-The abstract goes here.
+%TODO Write this once the paper is complete
 \end{abstract}
 
 % no keywords
@@ -405,14 +405,61 @@ The abstract goes here.
 
 
 \section{Introduction}
-% no \IEEEPARstart
+Digital image processing is a field which encourages the crossover of different
+scientific disciplines, often biological research and computer vision align to
+automate the collection and analysis of plant growth. However, art and
+computing are fields which, at first glance, have very little in common.
 
+But a deeper look unveils a plethora of different avenues from detecting
+forgeries to being able to date an artists work within a catalogue of their
+known pieces\cite{brown2013can}.
+
+This survey paper will unearth some of the techniques which are used to perform
+such analysis and evaluate their application in real world problems.
+
+%TODO this still need some expansion.
+
+\section{Image Processing}
+A typical digital image is represented as a matrix of pixels where each pixel
+contains information about the colour it represents. This colour can be
+described using several different representations and although each
+representation will equate to the same colour in the rendered image, the
+information stored can be radically different.
+
+This representation of an image provides several key pieces of information,
+including:
+
+\begin{itemize}
+\item colour space of the image
+\item the relationship between pixels
+\end{itemize}
+
+The digital processing of images is normally done through the application of
+functions or filters to the matrix to gather specific information relating to
+the desired result. A simple example of this would be averaging the colours of
+an image to get a basic idea of the colours in an image.
+
+More advanced techniques involve performing several of these operations in
+sequence to provide a more complex view of the image.
+
+There are many sections of image processing, each with their different purposes
+this report will particularly focus on those relating to colour space; edge
+detection and orientation for texture analysis and segmentation and regions of
+interest for brush stroke analysis.
+
+% TODO write more here too
+
+\section{Colour Space Analysis}
+
+\section{Texture Analysis}
+
+\section{Brush Stroke Analysis}
+
+\section{Application of Image Processing to Artwork}
+
+\subsection{Dating Artists Work}
 
 \section{Conclusion}
-The conclusion goes here.
-
-
-
 
 % conference papers do not normally have an appendix
 
@@ -436,7 +483,7 @@ The conclusion goes here.
 % http://www.michaelshell.org/tex/ieeetran/bibtex/
 \bibliographystyle{IEEEtran}
 % argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{bibliography}
+\bibliography{bibliography}
 
 % that's all folks
 \end{document}
