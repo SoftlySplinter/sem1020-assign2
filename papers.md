@@ -28,3 +28,14 @@
 
 ### Pros
 ### Cons
+
+## [When Van Gogh meets Mandelbrot: Multifractal classification of painting's texture](http://www.sciencedirect.com/science/article/pii/S0165168412000308)
+
+> Recently, a growing interest has emerged for examining the potential of Image Processing tools to assist Art Investigation. Simultaneously, several research works showed the interest of using multifractal analysis for the description of homogeneous textures in images. In this context, the goal of the present contribution is to study the benefits of using the wavelet leader based multifractal formalism to characterize paintings. After a brief review of the underlying key theoretical concepts, methods and tools, two sets of digitized paintings are analyzed. The first one, the Princeton Experiment, consists of a set of seven paintings and their replicas, made by the same artist. It enables examination of the potential of multifractal analysis in forgery detection. The second one is composed of paintings by Van Gogh and contemporaries, made available by the Van Gogh and Kröller-Müller Museums (Netherlands) in the framework of the Image processing for Art Investigation research program. It enables us to show various differences in the regularity of textures of Van Gogh's paintings from different periods, or between Van Gogh's and contemporaries' paintings. These preliminary results plead for the constitution of interdisciplinary research teams consisting of experts in art, image processing, mathematics and computer sciences.
+
+### Pros
+### Cons
+
+## [Image Fusion for Difference Visualization in Art Analysis](http://library.utia.cas.cz/separaty/2013/ZOI/blazek-0398593.pdf)
+
+> A new method for difference visualization is pre- sented, oriented on the art analysis application. Compared images are combined into one fused image without losing important image context. Dissimilar regions are highlighted by color, which encodes localized differences. The method was developed for comparison of artwork copies, but it can be applied for general image comparison, too. The method is based on diverging color maps. The color representation of the difference is comprehensi- ble, naturally ordered, and has maximal displayable resolution. The applicability of the method is demonstrated on hierarchy ordering of the copies of the ”A boy with a bird” painting by Mons Bernardo (1624-1687).
