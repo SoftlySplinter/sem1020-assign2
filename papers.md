@@ -38,4 +38,16 @@
 
 ## 6. [Image Fusion for Difference Visualization in Art Analysis](http://library.utia.cas.cz/separaty/2013/ZOI/blazek-0398593.pdf)
 
+
 > A new method for difference visualization is pre- sented, oriented on the art analysis application. Compared images are combined into one fused image without losing important image context. Dissimilar regions are highlighted by color, which encodes localized differences. The method was developed for comparison of artwork copies, but it can be applied for general image comparison, too. The method is based on diverging color maps. The color representation of the difference is comprehensi- ble, naturally ordered, and has maximal displayable resolution. The applicability of the method is demonstrated on hierarchy ordering of the copies of the ”A boy with a bird” painting by Mons Bernardo (1624-1687).
+
+### Pros
+### Cons
+
+## 7. [Can Mathematical Tools Illuminate Artistic Style?](http://www.siam.org/news/news.php?id=34)
+
+> Mathematicians often wring their hands and lament the lack of stories about mathematical research in the popular press. Yet in December, dozens of media outlets, including The New York Times and Wired, ran lengthy news stories on a rather technical paper involving mathematical tools for digital image processing. Why did this story attract attention when so many others have not?
+
+### Pros
+### Cons
+
