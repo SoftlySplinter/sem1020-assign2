@@ -85,3 +85,20 @@
 ### Pros
 ### Cons
 
+
+## 12. [The Design and Use of Steerable Filters](http://people.csail.mit.edu/billf/papers/steerpaper91FreemanAdelson.pdf)
+
+> ...
+
+### Pros
+### Cons
+
+
+## 13. [Texture Discrimination by Gabor Functions](http://scil.dinf.usherbrooke.ca/wp-content/courses/imn764/misc/Turner_1990.pdf)
+
+> A 2D Gabor filter can be realized as a sinusoidal plane wave of some frequency and orienta- tion within a two dimensional Gaussian envelope. Its spatial extent, frequency and orientation preferences as well as bandwidths are easily controlled by the parameters used in generating the filters. However, there is an "uncertainty relation" associated with linear filters which limits the resolution simultaneously at- tainable in space and frequency. Daugman (1985) has determined that 2D Gabor filters are members of a class of functions achieving optimal joint resolution in the 2D space and 2D frequency domains. They have also been found to be a good model for two dimen- sional receptive fields of simple cells in the striate cortex (Jones 1985; Jones et al. 1985).
+> 
+> The characteristic of optimal joint resolution in both space and frequency suggests that these filters are appropriate operators for tasks requiring simulta- neous measurement in these domains. Texture discrimination is such a task. Computer application of a set of Gabor filters to a variety of textures found to be preattentively discriminable produces results in which differently textured regions are distinguished by first- order differences in the values measured by the filters. This ability to reduce the statistical complexity dis- tinguishing differently textured region as well as the sensitivity of these filters to certain types of local features suggest that Gabor functions can act as detectors of certain "texton" types. The performance of the computer models suggests that cortical neurons with Gabor like receptive fields may be involved in preattentive texture discrimination.
+
+### Pros
+### Cons
