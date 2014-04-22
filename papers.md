@@ -58,3 +58,13 @@
 
 ### Pros
 ### Cons
+
+
+## 9. [Stylistic Analysis of Paintings using Wavelets and Machine Learning](http://web.math.princeton.edu/ipai/dating.pdf)
+
+> Wavelet transforms and machine learning tools can be used to assist art experts in the stylistic analysis of paintings. A dual-tree complex wavelet transform, Hidden Markov Treemodeling and Random Forest classifiers are used here for astylistic analysis of Vincent van Gogh’s paintings with resultson two stylometry challenges that concern “dating, resp. ex-tracting distinguishing features
+
+### Pros
+### Cons
+
+
