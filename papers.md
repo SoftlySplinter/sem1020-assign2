@@ -3,7 +3,18 @@
 ## 1. [Image Processing for Artist Identification](http://web.math.princeton.edu/ipai/spm.pdf)
 
 ### Pros
+
+* Leave-one-out cross validation
+* High-res images
+* Positive results (2 false positives, 2 false negatives)
+
 ### Cons
+
+* Very small data set
+* Very few negative examples (6)
+* High-res images only grayscale
+* No ground truth for brush strokes?
+
 
 
 ## 2. [Rhythmic Brushstrokes Distinguish van Gogh from His Contemporaries: Findings via Automated Brushstroke Extraction](http://infolab.stanford.edu/~wangz/project/imsearch/ART/PAMI11/li.pdf)
