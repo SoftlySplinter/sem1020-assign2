@@ -68,3 +68,20 @@
 ### Cons
 
 
+## 10. [The Van Gogh Project: Art Meets Mathematics in Ongoing International Study](http://www.siam.org/news/news.php?id=1568)
+
+> In a digital world, style is mathematical.
+
+### Pros
+### Cons
+
+
+## 11. [Texton-Based Analysis of Paintings](http://repository.tudelft.nl/assets/uuid:fb3803a0-d8e1-432e-87cb-00e0c8e5a62e/7798Laurens.pdf)
+
+> The visual examination of paintings is traditionally performed by skilled art historians using their eyes. Recentadvances in intelligent systems may support art historians in determining the authenticity or date of creationof paintings. In this paper, we propose a technique for the examination of brushstroke structure that views thewildly overlapping brushstrokes as texture. The analysis of the painting texture is performed with the help of atexton codebook, i.e., a codebook of small prototypical textural patches. The texton codebook can be learnedfrom a collection of paintings. Our textural analysis technique represents paintings in terms of histograms thatmeasure the frequency by which the textons in the codebook occur in the painting (so-calledtexton histograms).We present experiments that show the validity and effectiveness of our technique for textural analysis on acollection of digitized high-resolution reproductions of paintings by Van Gogh and his contemporaries.
+> 
+> As texton histograms cannot be easily be interpreted by art experts, the paper proposes two approaches tovisualize the results on the textural analysis. The first approach visualizes the similarities between the histogramrepresentations of paintings by employing a recently proposed dimensionality reduction technique, called t-SNE. We show that t-SNE (applied on texton histograms) separates paintings created by Van Gogh from thosecreated by other painters. In addition, the period of creation is faithfully reflected in the t-SNE visualizations.The second approach visualizes the similarities and differences between paintings by highlighting regions in apainting in which the textural structure of the painting is unusual. We illustrate the validity of this approach bymeans of an experiment in which we highlight regions in a painting by Monet that are not very “Van Gogh-like”.Taken together, we believe the tools developed in this study are capable of assisting for art historians in supportof their study of paintings.
+
+### Pros
+### Cons
+
