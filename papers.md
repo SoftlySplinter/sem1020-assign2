@@ -61,7 +61,18 @@
 ## 5. [When Van Gogh meets Mandelbrot: Multifractal classification of painting's texture](http://www.sciencedirect.com/science/article/pii/S0165168412000308)
 
 ### Pros
+
+* Intensity, RGB and HSL
+* Very interesting concepts and potentially very useful (?)
+
 ### Cons
+
+* Manual selection of patches requires expert knowledge and cannot be automated
+* Bindly patched
+* Discrimination of soft brush difficult
+* Sensitive to canvas structure
+* Sensitive to low-res images
+* Small data set
 
 ## 6. [Image Fusion for Difference Visualization in Art Analysis](http://library.utia.cas.cz/separaty/2013/ZOI/blazek-0398593.pdf)
 
