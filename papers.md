@@ -115,7 +115,12 @@
 ## 8. [Histograms of oriented gradients for human detection](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1467360&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1467360)
 
 ### Pros
+
+
+
 ### Cons
+
+* Not directly intended for artwork
 
 
 ## 9. [Stylistic Analysis of Paintings using Wavelets and Machine Learning](http://web.math.princeton.edu/ipai/dating.pdf)
