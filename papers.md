@@ -20,7 +20,14 @@
 ## 2. [Rhythmic Brushstrokes Distinguish van Gogh from His Contemporaries: Findings via Automated Brushstroke Extraction](http://infolab.stanford.edu/~wangz/project/imsearch/ART/PAMI11/li.pdf)
 
 ### Pros
+
+* Close work with art historians
+* Promising results
+
 ### Cons
+
+* Focuses on a single artist -> very specific
+* No ground truth for brush strokes
 
 ## 3. [An Investigation of Multispectral Imaging for the Mapping of Pigments in Paintings](http://www.art-si.org/PDFs/Processing/PigmentMapping-Zhao2007.pdf)
 
