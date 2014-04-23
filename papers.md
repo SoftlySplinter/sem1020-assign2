@@ -77,7 +77,16 @@
 ## 6. [Image Fusion for Difference Visualization in Art Analysis](http://library.utia.cas.cz/separaty/2013/ZOI/blazek-0398593.pdf)
 
 ### Pros
+
+* Identification of Regions of Interest faster and more precise (no results to back this up)
+* Can be applied to multiple images
+
 ### Cons
+
+* Visualisation rather than analysis
+* Single colour space
+* Only really applicable to similar images
+* Re-use of an existing colour space to show something different
 
 ## 7. [Can Mathematical Tools Illuminate Artistic Style?](http://www.siam.org/news/news.php?id=34)
 
