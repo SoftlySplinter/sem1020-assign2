@@ -151,3 +151,24 @@
 
 ### Pros
 ### Cons
+
+
+## 16. [Can we date an artist's work from catelogue photographs?](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?tp=&arnumber=6703803)
+
+*Because self-citation is win*
+
+### Pros
+
+* Novelty
+* Good range of features
+* Promising results
+* Good possibility of continuing work
+* Application of existing techniques to a real problem
+* Exemplars
+
+### Cons
+
+* Basic features
+* Low-res images
+* No unification of lighting, etc.
+* Painting size is actually the best indicator of time
