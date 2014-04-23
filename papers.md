@@ -32,7 +32,17 @@
 ## 3. [An Investigation of Multispectral Imaging for the Mapping of Pigments in Paintings](http://www.art-si.org/PDFs/Processing/PigmentMapping-Zhao2007.pdf)
 
 ### Pros
+
+* Account for the system of capturing images
+* Multispectral imaging used in other fields sucessfully
+* Potentially very powerful analysis technique to work out pigments
+
 ### Cons
+
+* Some priori knowledge input into the system (VG known not to use black paint)
+* More about recovery of originals than analysing images
+* No automatic detection of pigment maps (?)
+* Requires more hardware than software
 
 ## 4. [A Digital Technique for Art Authentication](http://www.cs.dartmouth.edu/~rockmore/pnas-rev.pdf)
 
