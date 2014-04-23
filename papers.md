@@ -91,7 +91,18 @@
 ## 7. [Analysis of The Distributions of Colour Characteristics in Art Painting Images](http://paws.kettering.edu/~pstanche/SJC052%20(3).pdf)
 
 ### Pros
+
+* Good number of artists and periods
+* Lightweight
+* Working system
+* Large overall data set
+
 ### Cons
+
+* Built on a lot of existing research
+* Fairly basic information considered
+* Small data set per artist
+* No expert backup (?)
 
 
 ## 8. [Histograms of oriented gradients for human detection](http://ieeexplore.ieee.org/xpl/login.jsp?tp=&arnumber=1467360&url=http%3A%2F%2Fieeexplore.ieee.org%2Fxpls%2Fabs_all.jsp%3Farnumber%3D1467360)
