@@ -88,7 +88,7 @@
 * Only really applicable to similar images
 * Re-use of an existing colour space to show something different
 
-## 7. 
+## 7. [Analysis of The Distributions of Colour Characteristics in Art Painting Images](http://paws.kettering.edu/~pstanche/SJC052%20(3).pdf)
 
 ### Pros
 ### Cons
