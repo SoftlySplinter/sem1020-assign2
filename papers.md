@@ -47,7 +47,16 @@
 ## 4. [A Digital Technique for Art Authentication](http://www.cs.dartmouth.edu/~rockmore/pnas-rev.pdf)
 
 ### Pros
+
+* High-res images
+* Promising results
+* Results correspond with expert
+
 ### Cons
+
+* Tiny data set (13 images)
+* Results only expressed in terms of distance
+* Specific to a small group of artists with a similar style
 
 ## 5. [When Van Gogh meets Mandelbrot: Multifractal classification of painting's texture](http://www.sciencedirect.com/science/article/pii/S0165168412000308)
 
