@@ -88,7 +88,7 @@
 * Only really applicable to similar images
 * Re-use of an existing colour space to show something different
 
-## 7. [Can Mathematical Tools Illuminate Artistic Style?](http://www.siam.org/news/news.php?id=34)
+## 7. 
 
 ### Pros
 ### Cons
