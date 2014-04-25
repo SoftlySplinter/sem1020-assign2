@@ -116,11 +116,13 @@
 
 ### Pros
 
-
+* Positive results
+* Simple yet effective histograms
 
 ### Cons
 
 * Not directly intended for artwork
+* Not all of the technique is useful for artwork
 
 
 ## 9. [Stylistic Analysis of Paintings using Wavelets and Machine Learning](http://web.math.princeton.edu/ipai/dating.pdf)
