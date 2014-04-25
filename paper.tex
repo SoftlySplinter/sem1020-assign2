@@ -148,6 +148,9 @@
 
 
 \usepackage{url}
+\usepackage{glossaries}
+
+\newacronym{RGB}{RGB}{Red, Green, Blue}
 
 % correct bad hyphenation here
 
@@ -190,6 +193,24 @@ digital analysis of paintings, as well as existing research which has already
 applied computer vision to the field of art.
 
 \section{Colour Analysis}
+Digital images are typically considered to be a matrix of pixels, where each
+pixel contains information about the colour of that place in the image. 
+
+Colours can be represented in numerous different ways, but are typically three
+to four bytes; for example the \gls{RGB} colour space uses one byte for the
+levels of red, one for green and one for blue. The fourth byte is unlikely to
+be considered in artwork as it usually represents the transparency, known as
+the alpha channel, of the pixel.
+
+A single byte colour space purely focuses on the intensity of a pixel, in
+actuality this represents a grayscale image.
+
+Analysing colour is the base of all analysis techniques in image processing,
+the value(s) of a pixel with regards to its location and neighbours can be used
+to build up some very complex knowledge about the image. This section will deal
+specifically with the colours which an artist uses within their work, such as
+looking at the distribution of colours across a work, rather than using colour
+information to determine textures.
 
 \subsection{Colour Distribution}
 % Paper 7
