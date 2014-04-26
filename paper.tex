@@ -262,8 +262,73 @@ relatively small items within them.
 Overall \gls{APICSS} is a good application of existing research, but uses very
 basic analysis techniques on the images themselves.
 
+
 \subsection{Pigment Mapping}
 % Paper 3
+Colour analysis can also give a glimpse into the colour pigments the artist
+used to create the work. Using a database of known oil pigments and
+\textit{a priori} knowledge, it is possible to work out which pigments are used
+in a painting, and also to be able to show which parts of the painting are made
+up from which pigment\cite{zhao2008investigation}.
+
+This is done through a process known a multispectral imaging, the process of
+capturing a different frequencies to provide a different spectrum of light and
+enable more analysis.
+
+This technique is especially powerful for segmenting different pigments in an
+image as each pigment is made up of a different substance.
+
+Because this process requires both hardware and software it make a large
+different whether the materials a work is made up of are known. When known it
+can be possible to find the combinations of these materials at a given point
+and their concentrations.
+
+When the materials are unknown, extra processing is required to decide which
+materials the painting comprises of. This process uses spectral processing but
+also requires prior knowledge of the artist and art tools.
+
+In the experimental results this paper provides, the latter is achieved by a
+study of another of Van Gogh's works from the same time.
+
+Pigment mapping across every pixel is a costly operation in terms of memory and
+CPU time. This research makes a reasonable assumption that a similar colour
+will have been painted using similar pigments to reduce the amount of pigment
+mapping which occurs. This does lead to unwanted side-effects, but the only way
+to combat these is to increase the number of pixels which pixel-mapping.
+
+To reduce the number of pixels considered for pigment mapping the image is
+first partitioned into a number of smaller images to reduce processing time on
+the next steps
+
+Each of these partitioned regions is then split into a number of clusters based
+on the colours of the pixels. This was done using supervised and unsupervised
+algorithms. The unsupervised algorithm was very sensitive and had long running
+times whilst the supervised algorithm requires a human observer.
+
+Finally pixels within these clusters were then selected based on the similarity
+of pixels within the cluster, the clusters and partitioned images can then be
+stitched back together and rendered based on the pigment maps.
+
+This research could be incredibly useful if it could be applied to the analysis
+of artwork and the field of multispectral analysis has already had a lot of
+success in other fields.
+
+However, because this is both a hardware- and software-based system, it may not
+be something which can be used with regularity as it requires the physical
+presence of the paintings, which not all artwork analysis researchers have
+access to.
+
+It also requires a lot of a priori knowledge of the artist and calculating the
+materials a painting consists of may be a difficult, if not impossible task,
+depending on the artist.
+
+In conclusion, this technique can provide a very powerful analysis of a
+painting, but at the cost of requiring specialised hardware, the physical
+painting and expert knowledge about the artist, so is a very manual process.
+
+This technique could be improved by using a less naive clustering unsupervised
+algorithm to remove some of the need for human intervention, but the need for
+the physical painting will always be a limiting factor of this work.
 
 \subsection{Difference Visualisation}
 % Paper 6
