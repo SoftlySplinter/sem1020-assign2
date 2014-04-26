@@ -150,7 +150,10 @@
 \usepackage{url}
 \usepackage{glossaries}
 
+\newacronym{APICSS}{APICSS}{Art Painting Image Color Semantics}
 \newacronym{RGB}{RGB}{Red, Green, Blue}
+\newacronym{HSL}{HSL}{Hue, Saturation, Luminance}
+\newacronym{HSV}{HSV}{Hue, Saturation, Value}
 
 % correct bad hyphenation here
 
@@ -214,6 +217,50 @@ information to determine textures.
 
 \subsection{Colour Distribution}
 % Paper 7
+
+The distribution of colour across an image can give a surprising amount of
+information about that image, especially given that colour is very subjective
+to an individual.
+
+Ivonna, Stanchev and Dimitrov investigated the colour
+distribution within the works of over 100 artists for several different
+countries and periods, using a system named \gls{APICSS}\cite{ivanova2008analysis}.
+
+Existing systems already statistically analysed colours within an image and
+some even used classifiers, typically a naive Bayesian classifier as it fits
+well with statical methods, to perform extra analysis.
+
+Unlike these existing system, \gls{APICSS} focused primarily on the \gls{HSL}
+colour space as it is the closest representation to an artist's colour wheel.
+\gls{HSV} was also considered, but because the lightness is not symmetrical
+within the \gls{HSV} colour space, it is less useful for direct comparison.
+
+As with any system involving classification, a feature space is needed to
+represent an item within the data set. In the case of \gls{APICSS} the feature
+space is three dimensional, one for each of the values in the colour space.
+
+From this, a distance measure (in this case Euclidean distance) can be used to
+compare different items.
+
+\gls{APICSS} also take into account some of the metadata attached to each
+painting, such as the movement and sub-movement during which the painting was
+created. This allows for more statistical analyses to be performed on sub-sets
+of the data set.
+
+\gls{APICSS} appears to be a good system, which considers both metadata and
+analysis gained from the digitisation of artwork. The paper considers a wide
+range of artists and periods.
+
+However, the use of a lossy image format (JPEG) could potentially skew the
+results. The system itself is very basic, especially if it only considers
+\gls{HSL} and metadata. This is further compounded by only considering thirteen
+colours within the Hue (twelve separate colours and one achromatic).
+
+Despite having a decent sized data set overall, some of the categories have
+relatively small items within them.
+
+Overall \gls{APICSS} is a good application of existing research, but uses very
+basic analysis techniques on the images themselves.
 
 \subsection{Pigment Mapping}
 % Paper 3
