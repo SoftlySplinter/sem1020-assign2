@@ -332,6 +332,45 @@ the physical painting will always be a limiting factor of this work.
 
 \subsection{Difference Visualisation}
 % Paper 6
+Another approach to colour is to visualise the difference between two or more
+different images, this is particularly of use for comparing different versions
+of the same image - the original to a famous forgery, for example.
+
+Image fusion is the process of combining two different images and has recently
+been applied to artwork\cite{blazek13image}. In this research, a technique for
+showing the differences between two or more images which can show positive,
+negative and zero difference between the images, whilst maintaining regions of
+interest between the two images. 
+
+The method for doing this uses the CIELAB colour space, which maps more
+faithfully to human vision than other colour spaces. However, because of the
+limitations displaying the images, they are converted to \gls{HSV} before they
+are displayed.
+
+A hue for both the positive and negative difference values is selected by the
+user as a vector, then the difference in the \gls{HSV} saturation of the two
+images is then computed into CIELAB, where it is an angle between the
+aforementioned colour vector.
+
+Finally this is converted into \gls{HSV}, where the Hue represents the sign of
+the computed image, the saturation the absolute distance and the value the
+average value of intensities of the compared image at that pixel.
+
+The authors claim this fusion improves the comprehension of the difference
+visualisation of images and that it makes identifying regions of interest
+faster and more precise, but provide no experimental results to prove this
+other than the fused image result of four different copies of the same artwork.
+
+This does keep the original image intact (albeit in grayscale with differences
+highlighted).
+
+This does only provide visualisation rather than analysis, but could potential
+be used as part of a larger system to build more complex analysis techniques.
+This might be especially useful to pick up difference between an original and a
+derivative work or forgery.
+
+At current, the images must be aligned and scaled manually, but this process
+could be automated trivially.
 
 \section{Texture Analysis}
 Paintings are somewhat unlike the normal subject for image processing, whilst
@@ -340,7 +379,13 @@ of a three dimensional object. Paintings often thought of as two dimensional,
 but with many paint types these paintings become three dimensional.
 
 This aspect is lost in the digitisation of the painting; but there are still
-ways of analysing the texture of the image.
+ways of analysing the texture of the image by analysing the colour of the
+image. Quite often, this is as effective on a one dimensional colour space as
+it is on a three dimensional one.
+
+Filters can be passed over an image to gather basic information such as
+direction of lines within the paintings. More complex techniques for analysing
+texture involve using wavelets and considering nearby pixels.
 
 \subsection{Steerable Filters}
 % Paper 12
