@@ -372,6 +372,11 @@ derivative work or forgery.
 At current, the images must be aligned and scaled manually, but this process
 could be automated trivially.
 
+This research appears to be of very limited use, but when used within as a part
+of a larger system could provide some very interesting analysis which could be
+used to train classifiers to detect forgeries, etc. but this still has limited
+scope.
+
 \section{Texture Analysis}
 Paintings are somewhat unlike the normal subject for image processing, whilst
 most images are either simple two dimensional images, or two dimensional slices
@@ -395,6 +400,48 @@ texture involve using wavelets and considering nearby pixels.
 
 \subsection{Histograms of Edge Orientated Gradients}
 % Paper 8
+
+A method for analysing the texture over an image to to create a histogram which
+contains the orientation of all the gradients over an image. This technique has
+been applied to the field of human detection\cite{dalal05histograms}, but is
+also useful when applied to the realm of digital analysis of artwork as well.
+
+A lot of the methodology for human detection involves the normalisation and
+classification, but does include some useful information about the practises of
+generating histograms of edge-orientated gradients. The gradients are computed
+using a variety of discrete derivative masks combined with degrees of Gaussian
+smoothing, although the results show that Gaussian smoothing and larger masks
+damage the performance.
+
+Each pixel is then binned according to a weighted vote from the mask, then each
+vote is accumulated into orientation bins in local regions, which could be
+rectangular or radial.
+
+These orientation bins were evenly spaced across $0-\pi$ unsigned bins or
+$i-2\pi$ signed bins. This is significant to note an orientation $\theta$ below
+$\pi$ is often thought of as equivalent to $\theta + \pi$ in image processing.
+
+Normalisation is then applied to reduce the effects of local contrast and is
+good for performance in the field of human detection. For artwork this may be
+less useful as these features are of importance.
+
+This research shows very good experimental results of large, popular data sets
+and beats all of the existing techniques on false positives (although no data
+for false negatives is shown).
+
+Although this research does not directly relate to the field of digital
+analysis of artwork, it has been used to generate some interesting
+analysis\cite{brown13can} although not all of the technique was applied in that
+research.
+
+The use of this research is the ability to store orientation data in
+histograms, which are very easy to process digitally.
+
+In conclusion, this technique provides a powerful analysis technique and the
+experimental results on several decent sized data sets to prove this. Although
+not all of the technique is useful or applicable to the digital analysis of
+paintings, the parts which are have been successfully used in research into
+artwork.
 
 \subsection{Multifractal Classification}
 % Paper 5
