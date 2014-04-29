@@ -498,9 +498,10 @@ These coefficients enable a definition of the global regularity of the image.
 To allow image classification across different scales, one needs a dyadic
 space; a space in which there are a collection of regions of different scales,
 where a region at one scale can also be viewed as the union of regions in a
-smaller scale. Figure~\ref{fig:dyadic-image} shows an example of this where the
-large regions show only a pixalated view of the image and the smallest the
-individual pixels of the image.
+smaller scale. Figure~\ref{fig:dyadic-image}\footnote{The photograph is
+property of the U.S. Federal Government, and is therefore in the public
+domain} shows an example of this where the large regions show only a pixalated
+view of the image and the smallest the individual pixels of the image.
 
 \begin{figure}[ht]
 \centering
@@ -510,12 +511,57 @@ individual pixels of the image.
 \hspace{.2in}%
 \subfloat[$C=128$]{\includegraphics[width=0.1\textwidth]{dyadic_8.png}}%
 \hspace{.2in}%
-\subfloat[$C=512$]{\includegraphics[width=0.1\textwidth]{dyadic_16.png}}%
-\caption{Example of dyadic space using the standard Lenna image (512x512
+\subfloat[$C=512$ (Original Size)]{\includegraphics[width=0.1\textwidth]{dyadic_16.png}}%
+\caption{Example of dyadic space using an image of Grace Hopper (512x512
 pixels) at different dyadic scales ($C$), note how the picture becomes less
 pixalated at higher scales}
 \label{fig:dyadic-image}
 \end{figure}
+
+A natural interpretation of multifractal analysis needs to be based on wavelet
+leaders, which allows an estimation of the multifractal spectrum of an image.
+The wavelet coefficients at finer scales within a small neighbourhood are used
+to renormalise the wavelet coefficients at a given scale.
+
+This is all theoretically very sound, but in practise it cannot be used on
+paintings without some modifications, mainly due to the fact that digital
+objects do not have an infinite resolution. So the analysis is slightly
+simplified to account for this to provide a fair estimation of the real
+analysis.
+
+This technique was applied to several different works, but the most interesting
+of there was the Princeton experiment, where an artist produced seven distinct
+small paintings using different materials. Two weeks later the artist was asked
+to produce replicas as close to the original as possible.
+
+Both the originals and replicas were scanned at a very high resolution to allow
+this analysis to be as detailed as possible.
+
+The results showed that, systematically, the textures of the replicas were
+globally more regular and smoother than the originals. However, it should be
+noted that getting these results required the expert selection of sections to
+analyse and the a posteriori selection of the range of scales for wavelet
+leaders. 
+
+With promising results shown from this experimentation, attention was turned to
+a norm for painting analysis: Van Gogh. Rather than consider the global state
+of the canvas, each image was split into smaller sections for the analysis, as
+paintings very rarely have the same texture globally.
+
+This analysis was used to try and place paintings in a date region and detect
+forgeries. The results shown for dating paintings into a period show some
+promising results, where the majority of paintings were correctly clustered
+into their correct periods. For detecting forgeries the results are promising,
+but one forgery slips by when it was noticed by experts.
+
+This technique is agnostic to the colour space and the authors do apply it to
+several different colour spaces, including black-white intensity, \gls{RGB} and
+\gls{HSL}. 
+
+There is a lot of expert knowledge which cannot be automated or, where it can
+be, is very arbitrary such as blindly selecting patches.
+
+The results from the Princeton experiments are promising, but the 
 
 \subsection{Texton-Based Analysis}
 % Paper 11
