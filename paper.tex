@@ -48,7 +48,7 @@
 
 \ifCLASSINFOpdf
   \usepackage[pdftex]{graphicx}
-  \graphicspath{{../img/}}
+  \graphicspath{{img/}}
   \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
   \usepackage[dvips]{graphicx}
@@ -80,11 +80,11 @@
 
 
 % *** SUBFIGURE PACKAGES ***
-%\ifCLASSOPTIONcompsoc
-%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
-%\else
-%  \usepackage[caption=false,font=footnotesize]{subfig}
-%\fi
+\ifCLASSOPTIONcompsoc
+  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\else
+  \usepackage[caption=false,font=footnotesize]{subfig}
+\fi
 % subfig.sty, written by Steven Douglas Cochran, is the modern replacement
 % for subfigure.sty, the latter of which is no longer maintained and is
 % incompatible with some LaTeX packages including fixltx2e. However,
@@ -395,8 +395,20 @@ texture involve using wavelets and considering nearby pixels.
 \subsection{Steerable Filters}
 % Paper 12
 
+For techniques which involve applying a filter to decide the direction of a
+line within a picture, one often needs to be able to change or rotate the
+filter by varying amounts of degrees. This principal is often described as
+steering a filter and an efficient technique for doing so is described in 
+\cite{freeman91design} in both two and three dimensional space.
+
+This technique involves finding a function of $x$ and $y$ which steers a filter
+
+% TODO I'm struggling to understand this one...
+
 \subsection{Gabor Filters}
 % Paper 13
+
+
 
 \subsection{Histograms of Edge Orientated Gradients}
 % Paper 8
@@ -445,6 +457,65 @@ artwork.
 
 \subsection{Multifractal Classification}
 % Paper 5
+
+Another analysis paradigm is fractal geometry which is based on the idea that
+all analysis performed on an image at difference scales are equally important
+and that the richest information can be found in the mechanisms which relate
+them to one another.
+
+Because of this, fractal tools can be used to analyse contours and textures of
+images.
+
+Multifractal analysis concentrates on the use of processing tools which
+describe the fluctuations within regular regions of an object which at
+different scales.
+
+Until recently multifractal analysis was rarely applied to image processing
+problems, but with the breakthrough in an efficient formulation of
+multifractal analysis obtained through wavelet leaders.
+
+The use of wavelet leader multifractal analysis has been used to explore
+painting texture classification\cite{abry2013van}.
+
+Image processing is a field which has grown out of signal processing; an image
+can actually be thought of as a two-dimensional signal, which allows existing
+signal processing techniques to be applied to them. In early days of image
+processing the Fourier transform was often used to decompose images into
+signals. In more recent years wavelets and transforms using wavelets have
+become more popular, as they can provide all the features of a Fourier
+transform, but also provide localised time information, as well as localised
+frequency information.
+
+In the case of images, localised time information maps to the location within
+an image.
+
+In this research, a 2D discrete wavelet transform is applied to the image to
+gather the wavelets coefficients, normalising the image to the correct form
+needed for the definition of wavelet leaders.
+
+These coefficients enable a definition of the global regularity of the image.
+
+To allow image classification across different scales, one needs a dyadic
+space; a space in which there are a collection of regions of different scales,
+where a region at one scale can also be viewed as the union of regions in a
+smaller scale. Figure~\ref{fig:dyadic-image} shows an example of this where the
+large regions show only a pixalated view of the image and the smallest the
+individual pixels of the image.
+
+\begin{figure}[ht]
+\centering
+\subfloat[$C=8$]{\includegraphics[width=0.1\textwidth]{dyadic_2.png}}%
+\hspace{.2in}%
+\subfloat[$C=32$]{\includegraphics[width=0.1\textwidth]{dyadic_4.png}}%
+\hspace{.2in}%
+\subfloat[$C=128$]{\includegraphics[width=0.1\textwidth]{dyadic_8.png}}%
+\hspace{.2in}%
+\subfloat[$C=512$]{\includegraphics[width=0.1\textwidth]{dyadic_16.png}}%
+\caption{Example of dyadic space using the standard Lenna image (512x512
+pixels) at different dyadic scales ($C$), note how the picture becomes less
+pixalated at higher scales}
+\label{fig:dyadic-image}
+\end{figure}
 
 \subsection{Texton-Based Analysis}
 % Paper 11
