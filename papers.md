@@ -146,8 +146,15 @@
 ## 12. [The Design and Use of Steerable Filters](http://people.csail.mit.edu/billf/papers/steerpaper91FreemanAdelson.pdf)
 
 ### Pros
+
+* Textbook-like reference
+* Illustrative and mathematical
+* Theoretical and practical elements
+* Even 3-D steerable filters
+
 ### Cons
 
+* No proper results`
 
 ## 13. [Texture Discrimination by Gabor Functions](http://scil.dinf.usherbrooke.ca/wp-content/courses/imn764/misc/Turner_1990.pdf)
 
