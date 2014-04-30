@@ -154,6 +154,8 @@
 \newacronym{RGB}{RGB}{Red, Green, Blue}
 \newacronym{HSL}{HSL}{Hue, Saturation, Luminance}
 \newacronym{HSV}{HSV}{Hue, Saturation, Value}
+\newacronym{PCA}{PCA}{Principal Component Analysis}
+\newacronym{t-SNE}{t-SNE}{t-Distributed Stochastic Neighbor Embedding}
 
 % correct bad hyphenation here
 
@@ -591,7 +593,88 @@ look at a histogram of the frequencies of these textons on the images to
 classify\cite{van2010texton}.
 
 Segmentation of brushstrokes is, understandably, difficult - especially
-digitally where the image is usually only two dimensional.
+digitally where the image is usually only two dimensional, but one can consider
+the texture of the painting with more ease and can provide a good insight into
+the artists style.
+
+Filters are becoming less popular for painting analysis as the filter often
+normalises the image to a certain extent in the process of analysis. Other
+approaches like wavelets and pixel-based representations, such as texton
+approaches, are becoming more popular to avoid this issue.
+
+It should be noted that whilst textons are a building block of the text of an
+image, they are not identical to brushstrokes.
+
+To construct the codebook of textons, 5000 patches are selected in random
+locations from each painting in the training set. These patches are then
+clustered and the most exemplary patch (the central patch) is selected as the
+most representative for that cluster.
+
+From this codebook it is then possible to generate a histogram for any image
+which estimates the distribution of these textons across the image. The
+histogram is created by applying a sliding window across the painting and
+selecting the nearest texton in euclidean space to the window. Finally the
+histogram is normalised to sum up to 1.
+
+The authors note that these histograms could be built up for different sizes of
+textons to increase the feature space available for analysis, for their own
+experiments they use six different scales of texton.
+
+Because the aim of this research was to work closely with experts in the field,
+the authors also came up with a method for visualising this information. For an
+image processing system this may not be required, but could be used to extract
+more useful information from the analysis.
+
+Because of the high dimension space it is necessary to reduce the
+dimensionality of the results to allow it to be human readable. Usually this
+would be performed by \gls{PCA}, but the way in which the data is structured,
+\gls{PCA} is too lossy for texton histograms; it has a linear nature whist the
+texton histograms may be high-dimensionally non-linear and it focuses on
+preserving the global structure rather than local structure of high-dimensional
+points.
+
+There are other techniques which might have been applied to solve these
+problems, but the authors found some shortcomings with these techniques which
+would have made real-life visualisation difficult.
+
+To cope with this, a new method for dimensionality reduction was invented:
+\gls{t-SNE}. This method hinges around keeping
+the conditional probabilities between the high and low dimension spaces
+similar.
+
+Interestingly, in the experiments \gls{PCA} was first use to reduce the
+dimensions down to 50, and then \gls{t-SNE} was
+used to reduce down to two dimensions. Suggesting that, for very high dimensions,
+\gls{t-SNE} is not very effective.
+
+The results on 117 high-resolution grayscale Van Gogh paintings show that most
+of the non-Van Gogh paintings appear on the peripheries of the visualised
+two-dimensional graph, apart from two specific forgeries: the Wacker forgery
+which had fooled experts for many years, but can successfully be found by
+looking at global features. The other, created by Gaugin, may remain undetected
+for the same reason.
+
+Visualisation of dated Van Gogh work does show some difference between the two
+time periods considered, but not enough to cluster or classify upon with any
+degree of accuracy.
+
+% How many clusters?
+
+This approach is definitely a useful one, especially given that the textons are
+learned from existing work, making analyses such as trying to date an artists
+work from sets of his known work very applicable. Although colour and global
+features are not considered by the textons described in this work, colour would
+be a simplistic feature to add and global features could be part of a separate
+technique which is later included with the histogram.
+
+The paper does leave some answered question, one notable one is how best to
+decide the number of clusters to build the texton histogram from and which
+scales the textons work best at. For use by experts with \gls{t-SNE} applied
+this might be some useful work, but \gls{t-SNE} seem to have limited
+application outside this form of data set. A comparison between \gls{PCA} and
+\gls{t-SNE} would, perhaps, show the advantage of the latter and an explanation
+as to why \gls{PCA} was applied before \gls{t-SNE} on their own experimental
+results would help others to better apply such methods correctly.
 
 \section{Statistical Analysis}
 
