@@ -689,8 +689,94 @@ to interpret them digitally for some form of use; determining whether a
 painting is authentic or not, or dating an artist's work within a set of their
 known work.
 
+Often these techniques involve using a form of machine learning to gather
+meaningful data from the high dimensional feature space which image processing
+processes provide.
+
 \subsection{Stylistic Analysis}
 % Paper 9
+
+All artists have a distinguishing style which may change as their career
+progresses. Art historians find this a challenging problem as many factors of
+the painting need to be taken into account. Image processing and machine
+learning techniques can be used to aid this process.
+
+Stylometry, the study of an artists style, has many problems involved with it.
+Two of these are: extracting distinguishing features and dating a
+painting, both these problems are tackled in \cite{jafarpour2009stylistic}.
+
+This research uses considers the artists style to be a hidden variable which
+controls the observable properties of the image; the colour, brushstrokes, etc.
+
+The dating challenge is the act of dating a painting from a catalogue of known
+paintings from the artists lifetime. An artists style is likely to change over
+time, especially as they meet their peers and try out new movements.
+
+This research considers how a human expert might approach the problem of
+determining style and that paintings may degrade over time due to the materials
+used to create them. Historians must combine a potentially noisy observation
+with pre-existing knowledge to come up with an analysis of the style.
+
+Computer systems have to use features of an image, considering both global and
+local information, to build up a high-dimensional feature space which can then
+have statistical analysis performed upon it to gauge some information about
+style.
+
+It has already been discussed that a \gls{HSL} colour space provides a more
+representative view of an image than a \gls{RGB} space. However, \gls{HSL} does
+not exist in a Cartesian space. This can be achieved by transforming the
+\gls{HSL} space into an XYZ space by ``unrolling'' the radial elements of
+\gls{HSL}. 
+
+As with many techniques which utilise wavelet transforms, a very high
+resolution is used to gather information which may be too fine for a human eye
+to perceive. A dual-tree complex wavelet transform using the aforementioned XYZ
+colour space can detect colour patterns as well as local difference.
+
+These wavelets provide coefficients in very high dimensional space which a
+large amount of noise. To deal with this there is a need for dimensionality
+reduction and normalisation of noise within the feature space.
+
+Hidden Markov Trees provide an image model over numerous different resolutions.
+They act like Hidden Markov Models but also considers a tree like structure
+which maps to dyadic space. This allows for an image to be described as a
+statistical entity rather than a set of pixels.
+
+At each scale there are hidden variables which control the wavelet
+coefficients. These hidden variable represent either a smooth region, which has
+a small variance, or an edge, which has a large variance.
+
+The images are split into several patches to allow the analysis to be performed
+effectively.
+
+Results for the dating challenge, 66 Van Gogh paintings were used with the goal
+of dating three test images which cannot be easily dated by art historians.
+Training was performed on the set of paintings using 10-fold cross-validation
+using several different classifiers. The best classifier; random forest; had a
+generalisation performance of 73.7\% and the results from the three test images
+aligned with the conclusions of the art historians, but this is somewhat
+conjecture as the dates aren't officially known.
+
+Extraction distinguishing features focused on extracting flowers within the
+paintings. Irrelevant patches were removed from the training images and again
+training was performed using 10-fold cross-validation using several
+classifiers. Once again random forest was the best decision and several
+distinct distinguishing features.
+
+The results of this research do seem promising, and the techniques described
+here do seem like they can provide some very powerful analysis.
+
+The sample size is a little small, but the split into different patches allows
+for a larger number of samples for training. Though this still only has a
+certain number of date ranges to work with.
+
+The size of the patches is never fully explored and the research blindly uses
+$256 \times 256$ pixels for each region. It would be interesting to see what
+effect changing the size of these regions would make upon the research.
+
+In conclusion this research provides some very powerful analysis with the
+experimental results to back it up in two different fields of stylometry which
+agree with expert opinion and begin to bring forth some new ideas.
 
 \subsection{Authentication of Artwork}
 % Paper 4
