@@ -156,6 +156,7 @@
 \newacronym{HSV}{HSV}{Hue, Saturation, Value}
 \newacronym{PCA}{PCA}{Principal Component Analysis}
 \newacronym{t-SNE}{t-SNE}{t-Distributed Stochastic Neighbor Embedding}
+\newacronym{MDS}{MDS}{Multidimensional Scaling}
 
 % correct bad hyphenation here
 
@@ -781,6 +782,91 @@ agree with expert opinion and begin to bring forth some new ideas.
 \subsection{Authentication of Artwork}
 % Paper 4
 
+Another interesting problem within the field of art analysis is the problem of
+many hands; that is determining how many authors created a work and which parts
+of said work can be attributed to which author. Obviously, the latter can also
+be simplified to test which artist created a work and thus detecting forgeries.
+
+One attempt to attempt to solve the many hands problem is described in
+\cite{lyu2004digital}. As with much of the recent work into applying image
+processing to artwork, it considers paintings at multiple resolutions and
+orientations using wavelets.
+
+% TODO technique.
+The method for this technique is to decompose the image using wavelets. In this
+paper quadrature mirror filters; filters which split an input signal into two
+bands; are used to split the frequency space into multiple scales and
+orientations. This produces a statistical model at each scale and orientation;
+known as a subband.
+
+The optimally predictive set of neighbours is selecting by minimising the
+prediction error using a brute force iterative approach on a per-subband and
+per-image basis across all subbands.
+
+Additional statistics are also gathered from the errors of the final predictor,
+again for each subband. For $n$ levels of decomposition, this will produces
+$24(n-2)$ values ($12(n-2)$ for optimal predictors, $12(n-2)$ for error
+statistics).
+
+These large dimensional spaces can be projected into a human-friendly subspace
+using a process named \gls{MDS}. \Gls{MDS} attempts to maintain the distance
+between data points when projecting into a lower dimensional space so should
+still provide a decent visualisation of the higher dimensional space.
+
+The first experiment focused on authenticating the work of Pieter Brugel the
+Elder who used very distinct style which the authors felt would be especially
+applicable to their technique. A set of 13 paintings conprising of 8 authentic
+Brugels and 5 famous imitations was the subject for this analysis.
+
+Each painting was scanned in very high resolution and was separated into 64
+non-overlapping regions. Each subimage was transformed the proposed wavelet
+transform at five levels and three orientations producing a 72 dimensional
+space. Authentication was performed by applying Hausdorff distance to this
+space with the assumption that authentic paintings would be closer together.
+
+This these experimental results it did indeed show that this was the case and
+are statistically significant, even in a reduced feature space through
+dimensionality reduction.
+
+This was also to applied to a painting by Pietro di Cristoforo Vannucci
+(Perugino) which is disputed by art historians to have been produced by more
+than a single artists, which, during the Renaissance was common amoungst the
+great works.
+
+This effect is commonly observed in the six faces which are depicted in this
+painting. These faces were first selected and then partitioned into $256 \times
+256$ regions as with the Brugel work. The technique was then applied and
+Hausdorff distance was measured between the feature spaces. Viewing the results
+shows an obvious clustering of three of the faces, whilst the other three are
+completely separate from this cluster and from each other. This would suggest
+that there were at least four hands involved in the painting, which is
+consistent of the views of some art historians. 
+
+The sample size both experiments were performed on is relatively tiny when
+compared to other studies using similar techniques. One could easily question
+the validity of such results, especially with the subjectivity of the second
+experiment where there is no definitive answer.
+
+The work of Brugel is noted to have delicate lines and shading which was
+expected and shown to have good results. A cynical reader might infer that this
+analysis technique is therefore not suited to other styles of art.
+
+It's also interesting that the Brugel paintings were cropped to a given size
+before being split into regions as this would surely lead to loss of
+information when it might have been better to just increase the number of
+regions across the image to include the whole image.
+
+As with other research including wavelets the dependence on a region size of
+$256 \times 256$ pixels is notable. This appears to be a standardised size for
+the application of wavelets, but there appears to be no documentation of this.
+
+In conclusion this work presents a method which may provide an insight into how
+many authors a work has, but has very few experimental results to back up this
+claim. Especially given other research into similar areas.
+
+% Line shaded -> applicable to paint?
+% Crop size -> loss of information
+
 \subsection{Dating an Artist's Work}
 % Paper AWESOME :D
 
@@ -791,6 +877,10 @@ agree with expert opinion and begin to bring forth some new ideas.
 
 \subsection{Rhythmic Brushstrokes}
 % Paper 2
+
+
+\section{Conclusions and Summary}
+% TODO beast mode this.
 
 % conference papers do not normally have an appendix
 
