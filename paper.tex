@@ -380,7 +380,7 @@ of a larger system could provide some very interesting analysis which could be
 used to train classifiers to detect forgeries, etc. but this still has limited
 scope.
 
-\section{Texture Analysis}
+\section{Texture Analysis}\label{sec:texture}
 Paintings are somewhat unlike the normal subject for image processing, whilst
 most images are either simple two dimensional images, or two dimensional slices
 of a three dimensional object. Paintings often thought of as two dimensional,
@@ -871,6 +871,27 @@ claim. Especially given other research into similar areas.
 % Paper AWESOME :D
 
 \section{Brushstroke Analysis}
+
+The ideal technique for analysing a painting digitally is to be able to extract
+brushstrokes from the painting and be able to analyse them based on their
+shape, colour and where on the painting different types of stroke were made.
+
+This is a very difficult task, it may be easy for a human non-expert to view a
+painting and roughly estimate where the surface brushstrokes are, implying that
+an expert may be able to tell far more from a detailed view of the painting,
+including multispectral imaging using X-rays.
+
+For a computer to do this is a very intensive and complex task. As discussed
+in section~\ref{sec:texture} is can be easy to view the texture of an image and
+even to be able to pull out some information about the texture of brushstrokes.
+But actually segmenting these brushstrokes for extraction quickly is a
+different story.
+
+This section will look into some of the research which has been attempting to
+extract brushstrokes from paintings for the purposes of identification and
+authentication of artwork. However, because this field is relatively narrow,
+some exploration into extraction of brushstrokes in calligraphy will also be
+considered as the fields have some overlap.
 
 \subsection{Artistic Identification}
 % Paper 1
