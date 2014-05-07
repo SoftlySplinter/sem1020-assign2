@@ -1187,6 +1187,27 @@ this is a very rounded piece of research.
 \subsection{Stroke Decomposition}
 % Paper 15
 
+One interesting use of stroke extraction is to animate Chinese paintings from
+an original\cite{xu2006animating}. This is a complex procedure which involves
+decomposing the painting based on brushstrokes, these brushstrokes can be
+represented as vectorised elements and become easy to manipulate and therefore
+animate.
+
+To decompose the strokes the following method is proposed.
+
+First, the image is over-segmented using a mean-shift algorithm, this is done
+because colour is required to extract brushstrokes, but is not enough alone.
+The over-segmentation stops regions spanning across multiple strokes, unless
+the strokes themselves are overlapping.
+
+The strokes are then extracted by merging these regions until they represent
+the brushstroke. This requires some domain knowledge as naively merging these
+regions may not represent the stroke accurately enough.
+
+Two intuitions are used in this research: colour gradients are low along brush
+strokes and strokes will match a library of strokes manually extracted from
+other sources. 
+
 \subsection{Calligraphy Stroke Extraction}
 % Paper 14
 
