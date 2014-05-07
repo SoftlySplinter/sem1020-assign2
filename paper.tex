@@ -1208,6 +1208,48 @@ Two intuitions are used in this research: colour gradients are low along brush
 strokes and strokes will match a library of strokes manually extracted from
 other sources. 
 
+To merge the segmented regions a region merging criterion $\epsilon$ is
+calculated. $\epsilon$ is then used to merge adjacent regions from highest to
+lowest. $\epsilon$ is calculated in terms of the differences in colour
+distribution between the regions and the similarity to the catalogue of
+brushstrokes.
+
+Once this process is complete, the strokes can then be refined and vectorised
+for the animation process.
+
+This paper also considers the separation of overlapping strokes to be able to
+animate them naturally, but this could potentially be used for further
+analysis. The overlapping regions can be identified in the segmentation process
+then have an iterative algorithm which separates the colours of the overlapping
+region. Because the colouring of an overlapping region can be the mixture of
+more than a single colour, a mixture model is used to model the overlapping
+strokes.
+
+Combining this with the library of known strokes can be used to get a good
+estimate of the separate strokes.
+
+This paper presents some really interesting research into the decomposition of
+paintings using brushstroke extraction; but is very specific to Chinese
+paintings. An example failure run on a painting by Georges Seurat shows the
+overfitting which this method falls prey to.
+
+The reliance of a catalogue of brushstrokes seems to do more harm than good in
+some circumstances, the authors do note that the catalogue is by no means
+exhaustive. This is what seems to lead to the over segmentation. Perhaps
+learning the strokes from existing work as discussed in \cite{van2010texton}
+could provide more generalised results.
+
+Unlike \cite{jia12rhythmic}, the extracted strokes are not evaluated against a
+ground truth. Even so, the visualisation of the segmented brush strokes seems
+reasonable and to be able to complete the animation steps there must be some
+validity to the extraction process.
+
+The development of a technique to discriminate two overlapping strokes shows
+some potential, although there is no real verification of the method to do
+some. It should also be noted that the paper only considers two overlapping
+strokes as more would become too computationally complex to complete in a
+reasonable time. 
+
 \subsection{Calligraphy Stroke Extraction}
 % Paper 14
 
