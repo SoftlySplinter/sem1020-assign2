@@ -20,7 +20,7 @@
 %% Legal Notice:
 %% This code is offered as-is without any warranty either expressed or
 %% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% FITNESS FOR A PARTICULAR PURPOSE!
 %% User assumes all risk.
 %% In no event shall IEEE or any contributor to this code be liable for
 %% any damages or losses, including, but not limited to, incidental,
@@ -202,7 +202,7 @@ applied computer vision to the field of art.
 
 \section{Colour Analysis}
 Digital images are typically considered to be a matrix of pixels, where each
-pixel contains information about the colour of that place in the image. 
+pixel contains information about the colour of that place in the image.
 
 Colours can be represented in numerous different ways, but are typically three
 to four bytes; for example the \gls{RGB} colour space uses one byte for the
@@ -345,7 +345,7 @@ Image fusion is the process of combining two different images and has recently
 been applied to artwork\cite{blazek13image}. In this research, a technique for
 showing the differences between two or more images which can show positive,
 negative and zero difference between the images, whilst maintaining regions of
-interest between the two images. 
+interest between the two images.
 
 The method for doing this uses the CIELAB colour space, which maps more
 faithfully to human vision than other colour spaces. However, because of the
@@ -403,7 +403,7 @@ texture involve using wavelets and considering nearby pixels.
 For techniques which involve applying a filter to decide the direction of a
 line within a picture, one often needs to be able to change or rotate the
 filter by varying amounts of degrees. This principal is often described as
-steering a filter and an efficient technique for doing so is described in 
+steering a filter and an efficient technique for doing so is described in
 \cite{freeman91design} in both two and three dimensional space.
 
 This technique involves finding a function of $x$ and $y$ which steers a filter
@@ -546,7 +546,7 @@ The results showed that, systematically, the textures of the replicas were
 globally more regular and smoother than the originals. However, it should be
 noted that getting these results required the expert selection of sections to
 analyse and the a posteriori selection of the range of scales for wavelet
-leaders. 
+leaders.
 
 With promising results shown from this experimentation, attention was turned to
 a norm for painting analysis: Van Gogh. Rather than consider the global state
@@ -561,7 +561,7 @@ but one forgery slips by when it was noticed by experts.
 
 This technique is agnostic to the colour space and the authors do apply it to
 several different colour spaces, including black-white intensity, \gls{RGB} and
-\gls{HSL}. 
+\gls{HSL}.
 
 There is a lot of expert knowledge which cannot be automated or, where it can
 be, is very arbitrary such as blindly selecting patches.
@@ -729,7 +729,7 @@ It has already been discussed that a \gls{HSL} colour space provides a more
 representative view of an image than a \gls{RGB} space. However, \gls{HSL} does
 not exist in a Cartesian space. This can be achieved by transforming the
 \gls{HSL} space into an XYZ space by ``unrolling'' the radial elements of
-\gls{HSL}. 
+\gls{HSL}.
 
 As with many techniques which utilise wavelet transforms, a very high
 resolution is used to gather information which may be too fine for a human eye
@@ -794,7 +794,6 @@ One attempt to attempt to solve the many hands problem is described in
 processing to artwork, it considers paintings at multiple resolutions and
 orientations using wavelets.
 
-% TODO technique.
 The method for this technique is to decompose the image using wavelets. In this
 paper quadrature mirror filters; filters which split an input signal into two
 bands; are used to split the frequency space into multiple scales and
@@ -842,7 +841,7 @@ Hausdorff distance was measured between the feature spaces. Viewing the results
 shows an obvious clustering of three of the faces, whilst the other three are
 completely separate from this cluster and from each other. This would suggest
 that there were at least four hands involved in the painting, which is
-consistent of the views of some art historians. 
+consistent of the views of some art historians.
 
 The sample size both experiments were performed on is relatively tiny when
 compared to other studies using similar techniques. One could easily question
@@ -1028,7 +1027,7 @@ computer science, notably items like Artificial Neural Networks, Immune and
 Endocrine Systems; Swarm Intelligence such as Ant Colony Optimisation; etc.
 
 Using the human visual system as a metaphor paintings can be analysed using
-three principals: 
+three principals:
 \begin{inparaenum}[1)]
 \item Importance of contours;
 \item Analysis at multiple scales;
@@ -1089,6 +1088,37 @@ brushstrokes formally it is a good step in the right direction.
 \subsection{Rhythmic Brushstrokes}
 % Paper 2
 
+Using computer vision to segment brushstrokes is a difficult task; often
+requiring expert knowledge of the painter and manual intervention to enable the
+process. \cite{jia12rhythmic} shows a method for the automatic extraction of
+brushstrokes.
+
+This method involves a complex process; first the image has an edge detection
+algorithm applied to it, then these edges are pruned to remove noisy, short and
+unconnected edges to improve the actual segmentation of strokes.
+
+Because an edge detector doesn't always pick up the full brushstroke, any gaps
+in the painting are enclosed using a greedy process of scanning neighbours and
+linking the nearest via a straight line if they are within a certain distance.
+
+Any fully enclosed brushstrokes are then extracted and checked against an upper
+and lower threshold for size. These thresholds were pre-selected to give a good
+estimate for the size of a brushstroke. This is finally labelled a brushstroke
+if the backbone is not too branched, it has a reasonable ratio of broadness to
+length and the size of the stroke is proportional to the backbone of the
+stroke.
+
+After this process is complete, the image is then segmented with regard to
+colour (\gls{RGB}) and directions (horizontal and vertical). $k$-means
+clustering is then applied multiple times, gradually decreasing the threshold
+for the average distance in the cluster. Any sufficiently small clusters are
+removed at each step and are not considered in the future runs of the $k$-means
+algorithm. This process is done to remove any noisy components there might be
+in the digitisation of the image.
+
+Brushstrokes which are already labelled are then removed and any remaining
+clusters are labelled according to the same process.
+
 \subsection{Stroke Decomposition}
 % Paper 15
 
@@ -1124,5 +1154,3 @@ brushstrokes formally it is a good step in the right direction.
 
 % that's all folks
 \end{document}
-
-
