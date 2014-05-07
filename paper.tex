@@ -1253,6 +1253,54 @@ reasonable time.
 \subsection{Calligraphy Stroke Extraction}
 % Paper 14
 
+Chinese calligraphy is a painted art in its own right, although not exactly
+like a painted scene it does provide some insight into stroke extraction which
+has a much more formalised ground truth.
+
+\cite{xu2005automatic} described a method for the automatic extraction of
+calligraphy strokes, with account for differing stroke sizes, deformations and
+noise found in historical work.
+
+Unlike paintings, Chinese calligraphy is only comprised of a certain catalogue
+of strokes and are categorised into either basic or composed strokes.
+
+The input, a binary image, has the Canny edge detection
+algorithm\cite{canny86computational} performed on it to extract the edge of the
+character.
+
+Because calligraphy strokes often overlap, the corner points of the edges of
+the character are found preserving information about the direction this process
+was performed in.
+
+A half-edge colouring graph can be created to show the relations between
+different edges. Each edge is split into two half-edges which has colours
+according to the relation to other edges. This information, plus the direction
+information allows the computation of matching different edges to build a
+single stroke, with relation to the distances of different vertices.
+
+This is done by removing the largest edge then trying to find one or more edges
+which can match to it to make a stroke. Once the stroke is found it can then
+have the gaps filled in by linking the two nearest vertices.
+
+There is little experimentation and no formal validation performed other than a
+visual check. The authors even note an occurrence where the corner detection
+algorithm failed to provide reasonable vertices and so the strokes had to be
+extracted manually.
+
+One would have though in an area where it would be easy to generate a ground
+truth, it would have been used to at least perform some form of statistical
+analysis on the results gained.
+
+This might be useful in edge cases of digitally analysing paintings, but
+without knowing how well it truly performs on calligraphy, one might be
+hesitant to apply this to a what is a much more complex field which needs the
+consideration of colour as opposed to a binary intensity.
+
+Whilst there are claims this technique should be able to cope with noise from
+historical degradation of the image, it is difficult to see how. Especially as
+Canny is known to susceptible to noise and can be improved to be less
+sensitive\cite{xiao10improved}.
+
 \section{Conclusions and Summary}
 % TODO beast mode this.
 
