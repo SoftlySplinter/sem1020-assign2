@@ -1119,6 +1119,71 @@ in the digitisation of the image.
 Brushstrokes which are already labelled are then removed and any remaining
 clusters are labelled according to the same process.
 
+Calculating the backbone is based on the edge detection of a segmented
+brushstroke, this will generally form ``Y'' shaped structures; in the case of a
+few of these structures, the shortest branch is simply removed. This process
+might produce a disconnected backbone, at which point it is labelled
+``severally branched''.
+
+To gain experimental results, 45 digitised oil paintings from van Gogh and his
+contemporaries were used, ranging in sizes and scales. A ground truth for the
+brushstroke extraction was generated manually from 10 regions of these
+paintings.
+
+First, the system used to decide if a region is a brushstroke was evaluated on
+these manually generated brushstrokes, obtaining a correct decision 95\% of the
+time.
+
+Then, the automatically extracted brushstrokes were compared to the manually
+selected ones in terms of: validity (the percentage of extracted brushstrokes
+which are in the ground truth) and detection (the percentage of the ground
+truth strokes which were extracted).
+
+Validity reached an average of 60\%, but ranged between 42\% and 83\% for
+different paintings. Detection also reached and average of 60\%, but the lowest
+was 22\% and only reached a high of 75\%.
+
+Of course, the extracted brushstrokes also need analysis performed on them.
+This is where the backbone calculation can also be used to extract features out
+of the brushstroke, as well as considering the features of the brushstroke
+itself.
+
+Using this statistically, this can be used to authenticate paintings and also
+begin to place them in different periods. However, the results from these are
+in terms of $p$-values for each feature and do not consider multiple features.
+However, it was found that the features which distinguish van Gogh from his
+contemporaries are not the same as the ones which differentiate two different
+periods in van Gogh's career.
+
+These results are very promising, especially given that the brushstrokes were
+compared to a ground truth. Of course it could be argued that the ten regions
+selected were done so to show the best of the technique, but given the
+visualisation of the brushstrokes, this seems unlikely.
+
+It would have been interesting research to see how the threshold values for the
+detection of a brushstroke; there is no investigation or discussion as to why
+the high and low values were set where they were.
+
+The same goes for $k$-means clustering; is there a better choice which provides
+more accurate clusters, and therefore strokes, or was it chosen because of its
+simplicity and the benefits gained from using a more complex one wouldn't be
+worth the computational complexity?
+
+One would have thought that a density-based clustering algorithm such as
+DBSCAN\cite{kriegel11density} would have been more applicable to this problem
+as it would have been able to cope with noise and may have provided a better
+segment of the brushstrokes.
+
+There is also the question of applicability. That is, this has been 
+successfully applied to van Gogh and some of his contemporaries with oil
+paintings, but would the technique still yield such good results is applied to
+an artist who used a palette knife, etc.?
+
+In conclusion, this paper presents a very useful method for extracting
+brushstrokes and compares the process of doing so to a ground truth. There are
+still some elements which could use further investigation, but on the whole
+this is a very rounded piece of research.
+
 \subsection{Stroke Decomposition}
 % Paper 15
 
