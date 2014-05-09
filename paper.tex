@@ -406,14 +406,82 @@ filter by varying amounts of degrees. This principal is often described as
 steering a filter and an efficient technique for doing so is described in
 \cite{freeman91design} in both two and three dimensional space.
 
-This technique involves finding a function of $x$ and $y$ which steers a filter
+This technique involves finding a function of $x$ and $y$ which rotates a given
+filter by a given angle, typically in terms of $\frac{\pi}{4}$ rotations, but
+it can be more fine-grain than that.
 
-% TODO I'm struggling to understand this one...
+A lot of this research stems from the idea that images are really
+two-dimensional signals; therefore filters can also be thought of similarly.
+And a function to rotate them will generally deal with shifting the signal
+along an axis or transforming the signal so it has the effect of rotating the
+signal.
+
+This process can have high computational costs when used on a filter which is
+not separable in terms of $x$ and $y$, so it is preferred if a filter can be
+designed to be so, rather than take the computational cost.
+
+These filters can be used for several applications, from analysing the local
+orientation of gradients, which in turn can be used to build up systems which
+detect items in images, such as \cite{dalal05histograms}; help to remove noise
+in an image based on angles; detect contours within an image when applied to an
+image transformed using an edge detection algorithm; and calculating the shape
+from the shading of an image.
+
+This paper presents an idea and its application but reads more like a textbook
+reference than an experiment. As such there are no actual results detailed by
+the paper other than to visualise some of the problems and solutions steerable
+filters can be applied to.
+
+Of course one could question the applicability of this research; but given the
+wide-spread use of this research\footnote{Cited by at least 680 other IEEE
+papers} this is very doubtable.
 
 \subsection{Gabor Filters}
 % Paper 13
 
-% TODO Again, another complex one :-(
+Gabor filters are a sinusoidal wave within a Gaussian
+envelope\cite{gabor1946theory}\cite{daugman1985uncertainty} which allows the
+filter which matches signals with variable orientation, frequency and
+bandwidth. They are useful within image processing as they can be steered in a
+near limitless range of orientations by the change of a single parameter. The
+size (frequency) of the areas can also be tuned with the modification of a
+second parameter, making them very powerful.
+
+These attributes make Gabor filters appropriate for the task of texture
+discrimination. Texture discrimination is the task of labelling whether two
+textures are the same or different. To the human vision model this is quite a
+natural and simple take, but to a machine this is a complex task as a simple
+equality check does not account for noise or changes in intensity.
+
+Gabor filters are designed to model the way human vision system works as
+closely as possible.
+
+\cite{turner1986texture} describes a method of using Gabor filters for texture
+discrimination and is done by passing Gabor filters at $\frac{\pi}{4}$
+increments in orientation from $0$ to $\pi$ over overlapping regions of images
+at two phases. The results of the passes of each filter are then made into a
+phase insensitive measurement by taking the Euclidean distance of the two
+measurements based on the result from the filter and the intensity of the
+pixels.
+
+Regions are then partitioned based on the sum of this measurement across a
+square of pixels.
+
+Although the results are very subjective; based on visualisations compared to
+the human analysis, they do show some promising results, although in some
+respects not entirely unexpected.
+
+For example, Gabor filters ``see'' T-shaped structures closer to L-shaped
+structures rather than T-shaped structures rotated by $\frac{\pi}{4}$. This
+could be due to the low range of orientations the authors use in this paper.
+
+This paper does show how useful Gabor filters can be in their application to
+image processing; especially when considering the texture of images; however it
+does also expose some of the flaws of a filter-only approach.
+
+Although only using four orientations may appear to limit the applicability of
+the filters, other research\cite{brown13can} also shows that higher
+orientations does not always provide better results.
 
 \subsection{Histograms of Edge Orientated Gradients}
 % Paper 8
@@ -870,6 +938,72 @@ claim. Especially given other research into similar areas.
 
 \subsection{Dating an Artist's Work}
 % Paper AWESOME :D
+
+Another avenue which can be taken is to use an artist's existing work to try
+and classify new examples. \cite{brown13can} describes one attempt to do this
+using a variety of techniques, from colour analysis to texture details.
+
+To verify the results gained from this research the authors used a
+leave-one-out cross-validation strategy on the 102 works for which a date was
+know. This provided a correlation between actual year and classified year, as
+well as the statistical significance of these results and the number of
+paintings which were successfully classified within 15 years.
+
+Analysis techniques provided results in the form of histograms which could then
+be used to measure the distance between an example and the training set and
+classified using $k$-nearest neighbour. This classification algorithm was used
+because of its simplicity and naivety, which allowed it to only consider
+distance in the feature space rather than any patterns in the underlying data.
+
+Graphing the results of the classification a ``best'' value of $k = 7$ for
+$k$-nearest neighbour was selected visually and used to gather formal results.
+These results show correlations approaching $0.5$ for some of the more advanced
+techniques; those examining the texture of the work.
+
+This research also considered the idea of exemplar paintings; those paintings
+which are most representative for a given year. Expert knowledge was used to
+produce a list of \emph{Artistic Exemplars}, those most representative of the
+artists style to an expert in the field. From analysis of a group of paintings
+for each year a central point was computed, then the closest painting to this
+central point was chosen as a \emph{Statistical Exemplar} for that year.
+
+These exemplars were then used to classify other paintings by labelling the
+painting with the nearest exemplar. Though these don't show as good correlation
+results, it does allow other avenues of work to be created such as
+investigating the differences between the \emph{Artistic} and
+\emph{Statistical} exemplars.
+
+This work does start tcentral point was computed, then the closest painting to
+this central point was chosen as a \emph{Statistical Exemplar} for that year.
+
+These exemplars were then used to classify other paintings by labelling the
+painting with the nearest exemplar. Though these don't show as good correlation
+results, it does allow other avenues of work to be created such as
+investigating the differences between the \emph{Artistic} and
+\emph{Statistical} exemplars.
+
+This work is obviously in its infancy but does show some promising results. The
+methodology is well thought through.
+
+The authors do discuss the use of $k$-nearest neighbour and whether it should
+be compared to other classifiers. An \gls{SVM} seems particularly applicable as
+it would help draw out some of the underlying patterns in the artists work.
+
+The lack of high-resolution images with non-standard lighting has hindered this
+research somewhat; although part of the point of the research is that the
+system should be robust enough to handle simple catalogue images, it does
+appear to damage the performance.
+
+It is also very specific to the artist Kyffin Williams, as his work was highly
+textural, which might explain why features including texture performed better.
+More work could be done to explore other artists and see how they compare to
+Williams.
+
+As the work uses histograms, it might have provided better results to combine
+the results of the analysis techniques to gather a larger histogram. This would
+have to be normalised or weighted based on the performance of the techniques to
+gather meaningful analysis, but is another avenue which hasn't been explored
+sufficiently.
 
 \section{Brushstroke Analysis}
 
