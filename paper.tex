@@ -377,11 +377,6 @@ derivative work or forgery.
 At current, the images must be aligned and scaled manually, but this process
 could be automated trivially.
 
-This research appears to be of very limited use, but when used within as a part
-of a larger system could provide some very interesting analysis which could be
-used to train classifiers to detect forgeries, etc. but this still has limited
-scope.
-
 \section{Texture Analysis}\label{sec:texture}
 Paintings are somewhat unlike the normal subject for image processing, whilst
 most images are either simple two dimensional images, or two dimensional slices
@@ -587,7 +582,7 @@ view of the image and the smallest the individual pixels of the image.
 \subfloat[$C=512$ (Original Size)]{\includegraphics[width=0.1\textwidth]{dyadic_16.png}}%
 \caption{Example of dyadic space using an image of Grace Hopper (512x512
 pixels) at different dyadic scales ($C$), note how the picture becomes less
-pixalated at higher scales}
+pixelated at higher scales}
 \label{fig:dyadic-image}
 \end{figure}
 
@@ -648,11 +643,6 @@ knowledge by taking multiple patches from the van Gogh paintings, but for the
 results they show only individual paintings are considered. One could easily
 question the validity of their results based on this.
 
-In conclusion this is a very complex but powerful technique which is actually
-applying theoretical concepts to perform some interesting analysis and
-classification. However, the sensitivity of the technique and with the need for
-expert and a posteriori decisions do limit the real application of this
-research.
 
 \subsection{Texton-Based Analysis}
 % Paper 11
@@ -845,9 +835,6 @@ The size of the patches is never fully explored and the research blindly uses
 $256 \times 256$ pixels for each region. It would be interesting to see what
 effect changing the size of these regions would make upon the research.
 
-In conclusion this research provides some very powerful analysis with the
-experimental results to back it up in two different fields of stylometry which
-agree with expert opinion and begin to bring forth some new ideas.
 
 \subsection{Authentication of Artwork}
 % Paper 4
@@ -928,10 +915,6 @@ regions across the image to include the whole image.
 As with other research including wavelets the dependence on a region size of
 $256 \times 256$ pixels is notable. This appears to be a standardised size for
 the application of wavelets, but there appears to be no documentation of this.
-
-In conclusion this work presents a method which may provide an insight into how
-many authors a work has, but has very few experimental results to back up this
-claim. Especially given other research into similar areas.
 
 % Line shaded -> applicable to paint?
 % Crop size -> loss of information
@@ -1215,9 +1198,6 @@ which these techniques can be applied to, so it is difficult to know how well
 these techniques will apply to other paintings by van Gogh or by different
 artists.
 
-In conclusion, this is a decent application of existing research with real
-results being gained, although it doesn't deal with the extraction of
-brushstrokes formally it is a good step in the right direction.
 
 \subsection{Rhythmic Brushstrokes}
 % Paper 2
@@ -1313,10 +1293,6 @@ successfully applied to van Gogh and some of his contemporaries with oil
 paintings, but would the technique still yield such good results is applied to
 an artist who used a palette knife, etc.?
 
-In conclusion, this paper presents a very useful method for extracting
-brushstrokes and compares the process of doing so to a ground truth. There are
-still some elements which could use further investigation, but on the whole
-this is a very rounded piece of research.
 
 \subsection{Stroke Decomposition}
 % Paper 15
@@ -1437,6 +1413,26 @@ sensitive\cite{xiao10improved}.
 
 \section{Conclusions and Summary}
 % TODO beast mode this.
+
+Digital analysis of artwork is not a trivial task: there are many problems
+which occur far more prevalently than in other fields of image processing. The
+need for high-resolution copies of artwork with a standard method of capture
+can significantly hinder some areas due to the lack of availability.
+
+Added to that, noise is far more common from degradation of works from a lack
+of care or poor materials used to create the piece. Although this is a
+two-sided coin and there are analysis which could be performed which look at
+specific types of degradation to authenticate an artwork.
+
+With all the different kinds of art and materials which can be used to produce
+works, it is very difficult not to over specialise in the analysis techniques,
+especially when it comes to complex techniques such as detecting brushstrokes.
+
+Texture appears the be the base of a decent analysis technique; most of the
+brushstroke extraction technique use some form of texture discrimination to
+function. Colour does provide some interesting results, but it is usually the
+cumulation of texture and colour which provides the most powerful analysis.
+
 
 % conference papers do not normally have an appendix
 
